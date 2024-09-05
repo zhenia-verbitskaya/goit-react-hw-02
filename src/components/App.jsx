@@ -18,12 +18,12 @@ export default function App() {
       return JSON.parse(savedStatistics);
     }
 
-    return {};
+    return state;
   });
 
   useEffect(() => {
     window.localStorage.setItem("statistics", JSON.stringify(values));
-  });
+  }, [values]);
 
   const updateFeedback = (feedbackType) => {
     setValues({
